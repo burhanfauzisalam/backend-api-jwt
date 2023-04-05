@@ -16,7 +16,7 @@ exports.parent = (req, res) => {
 exports.all = (req, res) => {
   parents.findAll().then((parents) => {
     res.send({
-      parents: p_email,
+      parents: parents,
     });
   });
 };

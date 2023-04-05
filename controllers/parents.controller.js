@@ -1,21 +1,22 @@
-const db = require('../models/model.js')
-const parents = db.parents
+const db = require("../models/model.js");
+const parents = db.parents;
 
 exports.parent = (req, res) => {
-    parents.findOne({
-        where: {p_email: req.email}
-    }).then( parents => {
-        res.send({
-            parents : parents
-        })
+  parents
+    .findOne({
+      where: { p_email: req.email },
     })
-}
+    .then((parents) => {
+      res.send({
+        parents: parents,
+      });
+    });
+};
 
 exports.all = (req, res) => {
-    parents.findAll()
-    .then( parents => {
-        res.send({
-            parents : parents
-        })
-    })
-}
+  parents.findAll().then((parents) => {
+    res.send({
+      parents: parents,
+    });
+  });
+};
